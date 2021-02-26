@@ -1,0 +1,2660 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, maximum-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png">
+  <meta name="og:type" content="website">
+  <meta name="twitter:card" content="photo">
+  <script id="anima-hotspots-script" src="hotspots.js"></script>
+  <script id="anima-overrides-script" src="overrides.js"></script>
+  <script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script>
+<style>
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+    font-family: "SegoeUI-Bold";
+	font-style: normal;
+	font-weight: 700;
+    src: url('https://anima-uploads.s3.amazonaws.com/5c584d745e9ae3000a003018/segoeuib.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "SegoeUI-Black";
+	font-style: normal;
+	font-weight: 900;
+    src: url('https://anima-uploads.s3.amazonaws.com/5b1e8d8e336c4b0009507857/segoeui.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "SegoeUI-Semibold";
+	font-style: normal;
+	font-weight: 400;
+    src: url('https://anima-uploads.s3.amazonaws.com/5b1e8d8e336c4b0009507857/segoeui.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "SegoeUI-Regular";
+	font-style: normal;
+	font-weight: 400;
+    src: url('https://anima-uploads.s3.amazonaws.com/5c4fb9717d3628000b06e02f/segoe-ui.ttf') format("truetype");
+}
+
+.component-wrapper a,
+.screen a {
+    text-decoration: none;
+    display: contents;
+}
+
+
+
+.full-width-a {
+    width: 100%;
+}
+
+.full-height-a {
+    height: 100%;
+}
+
+.screen textarea:focus,
+.screen input:focus {
+    outline: none;
+}
+
+.screen *,
+.component-wrapper *{
+    box-sizing: border-box;
+}
+
+.screen div {
+    -webkit-text-size-adjust: none;
+}
+
+.container-center-vertical,
+.container-center-horizontal {
+    pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+.container-center-vertical {
+    align-items: center;
+    height: 100%;
+}
+
+.container-center-horizontal {
+    justify-content: center;
+    width: 100%;
+}
+
+.container-center-vertical > *,
+.container-center-horizontal > * {
+    pointer-events: auto;
+    flex-shrink: 0;
+}
+
+.component-wrapper,
+.screen {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+}
+
+.auto-animated div {
+    opacity: 0;
+    position: absolute;
+    --z-index: -1;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+    opacity: 1;
+}
+
+.overlay {
+position: absolute;
+opacity: 0;
+display: none;
+top: 0;
+width: 100%;
+height: 100%;
+position: fixed;
+}
+
+.animate-appear {
+    opacity: 0;
+    display: block;
+    animation: reveal 0.3s ease-in-out 1 normal forwards;
+}
+
+.animate-disappear {
+    opacity: 1;
+    display: block;
+    animation: reveal 0.3s ease-in-out 1 reverse forwards;
+}
+
+.animate-nodelay {
+    animation-delay: 0s;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.align-self-flex-start {
+    align-self: flex-start;
+}
+.align-self-flex-end {
+    align-self: flex-end;
+}
+.align-self-flex-center {
+    align-self: center;
+}
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.valign-text-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+ input:focus {
+    outline: none;
+}
+.component-wrapper,
+.component-wrapper * {
+    pointer-events: none;
+}
+
+.component-wrapper a *,
+.component-wrapper a,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe,
+.listeners-active,
+.listeners-active * {
+    pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+    visibility: hidden !important;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+    cursor: pointer;
+}
+
+/* screen - web-1920-1 */
+
+.border-1-5px-nevada {
+  border: 1.5px solid var(--nevada);
+}
+.border-1px-dove-gray {
+  border: 1px solid var(--dove-gray);
+}
+.segoeui-normal-blue-violet-16px {
+  color: var(--blue-violet);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+.segoeui-normal-tundora-16px {
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 {
+  background-color: rgba(254,246,246,1.0);
+  height: 1080px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1920px;
+}
+.web-1920-1 .access-more-tools-insigts-WEeakb {
+  background-color: transparent;
+  bottom: calc(20.70% - 6px);
+  color: var(--dove-gray);
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: 29px;
+  left: calc(38.96% - 95px);
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 245px;
+}
+.web-1920-1 .add-to-your-feed-ubOPYJ {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: left;
+  top: 6px;
+  white-space: nowrap;
+  width: 264px;
+}
+.web-1920-1 .ago-XVTbZx {
+  background-color: transparent;
+  bottom: 2px;
+  height: 23px;
+  left: 25px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 30px;
+}
+.web-1920-1 .aid-kit-C61RwL {
+  background-color: transparent;
+  height: 40px;
+  left: 1118px;
+  position: absolute;
+  top: 22px;
+  width: 43px;
+}
+.web-1920-1 .annn-Gms4it {
+  background-color: transparent;
+  border-radius: 387px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .annn-QFNxF6 {
+  background-color: transparent;
+  border-radius: 387px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 73px;
+}
+.web-1920-1 .arsenal-jU6RQi {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  height: 48px;
+  left: 5px;
+  letter-spacing: 0.00px;
+  line-height: 34px;
+  position: absolute;
+  text-align: left;
+  top: 6px;
+  white-space: nowrap;
+  width: 117px;
+}
+.web-1920-1 .bmw-ZJJWlH {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  height: 42px;
+  left: 2px;
+  letter-spacing: 0.00px;
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  top: 5px;
+  white-space: nowrap;
+  width: 77px;
+}
+.web-1920-1 .bookmark-GrCwQC {
+  background-color: transparent;
+  bottom: 0px;
+  height: 23px;
+  left: 0px;
+  position: absolute;
+  width: 17px;
+}
+.web-1920-1 .bubbles-nixxxd {
+  background-color: transparent;
+  height: calc(100.00% - 3px);
+  left: 0px;
+  position: absolute;
+  top: 3px;
+  width: calc(100.00% - 4px);
+}
+.web-1920-1 .calendar-C61RwL {
+  background-color: transparent;
+  height: 21px;
+  left: 57px;
+  position: absolute;
+  top: 958px;
+  width: 22px;
+}
+.web-1920-1 .calendar-aCi14x {
+  background-color: transparent;
+  bottom: calc(22.33% - 6px);
+  height: 27px;
+  left: 50px;
+  position: absolute;
+  width: 22px;
+}
+.web-1920-1 .calendar-yQISpS {
+  background-color: transparent;
+  height: calc(100.00% - 4px);
+  left: 0px;
+  position: absolute;
+  top: 1px;
+  width: 32px;
+}
+.web-1920-1 .chevron-up-8t3xyo {
+  background-color: transparent;
+  height: 19px;
+  left: 4px;
+  position: absolute;
+  top: -4px;
+  transform: rotate(-90deg);
+  width: calc(100.00% - 8px);
+}
+.web-1920-1 .chevron-up-Olj0yE {
+  background-color: transparent;
+  height: 19px;
+  left: 4px;
+  position: absolute;
+  top: -4px;
+  transform: rotate(-90deg);
+  width: calc(100.00% - 8px);
+}
+.web-1920-1 .chevron-up-hzackg {
+  background-color: transparent;
+  height: 11px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .co-founder-aduki-inc-WEeakb {
+  background-color: transparent;
+  color: var(--dove-gray);
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: 34px;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  right: calc(49.96% - 104px);
+  text-align: left;
+  top: calc(37.53% - 13px);
+  width: 208px;
+}
+.web-1920-1 .code-JxopiR {
+  background-color: transparent;
+  color: var(--bismark);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: 61px;
+}
+.web-1920-1 .code-fiUv6h {
+  background-color: transparent;
+  height: calc(100.00% - 9px);
+  left: 0px;
+  position: absolute;
+  top: 5px;
+  width: 32px;
+}
+.web-1920-1 .comment-VWEwKr {
+  background-color: transparent;
+  height: 23px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: 73px;
+}
+.web-1920-1 .company-automobile-ZJJWlH {
+  background-color: transparent;
+  bottom: -6px;
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  height: 30px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: calc(100.00% + 2px);
+}
+.web-1920-1 .company-sports-jU6RQi {
+  background-color: transparent;
+  bottom: -6px;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  height: 30px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: calc(100.00% + 2px);
+}
+.web-1920-1 .covid19-xj6ht1 {
+  background-color: transparent;
+  color: var(--nevada);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  height: 28px;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 19px;
+  position: absolute;
+  text-align: left;
+  top: calc(25.61% - 7px);
+  white-space: nowrap;
+  width: 78px;
+}
+.web-1920-1 .dev-community-xj6ht1 {
+  background-color: transparent;
+  bottom: calc(43.84% - 10px);
+  color: var(--nevada);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  height: 22px;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 15px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 112px;
+}
+.web-1920-1 .developer-week-xj6ht1 {
+  background-color: transparent;
+  bottom: calc(21.71% - 6px);
+  color: var(--nevada);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  height: 26px;
+  left: calc(27.96% - 37px);
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 133px;
+}
+.web-1920-1 .discover-more-xj6ht1 {
+  background-color: transparent;
+  bottom: 2px;
+  color: var(--nevada);
+  font-family: 'SegoeUI-Bold', Helvetica, Arial, serif;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 700;
+  height: 40px;
+  left: calc(39.08% - 77px);
+  letter-spacing: 0.00px;
+  line-height: 29px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 198px;
+}
+.web-1920-1 .dorie-clark-7ANjiA {
+  background-color: transparent;
+  bottom: -6px;
+  color: var(--black);
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 400;
+  height: 28px;
+  left: 33px;
+  letter-spacing: 0.00px;
+  line-height: 19px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 95px;
+}
+.web-1920-1 .dots-three-horizontal-C61RwL {
+  background-color: transparent;
+  height: 7px;
+  left: 1307px;
+  position: absolute;
+  top: 1053px;
+  width: 29px;
+}
+.web-1920-1 .dots-three-horizontal-lWdor6 {
+  background-color: transparent;
+  bottom: 2px;
+  height: 7px;
+  position: absolute;
+  right: 1px;
+  width: 29px;
+}
+.web-1920-1 .ellipse-1-Gms4it {
+  background-color: rgba(6,251,87,1.0);
+  border: 3px solid var(--soapstone);
+  border-radius: 7.5px/8px;
+  bottom: 1px;
+  height: 16px;
+  position: absolute;
+  right: 6px;
+  width: 15px;
+}
+.web-1920-1 .ellipse-2-cVvdk6 {
+  background-color: rgba(252,7,24,1.0);
+  border-radius: 14px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .ellipse-3-xLQQM2 {
+  background-color: rgba(252,7,24,1.0);
+  border-radius: 14px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .event-yQISpS {
+  background-color: transparent;
+  color: var(--bismark);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: 69px;
+}
+.web-1920-1 .events-xj6ht1 {
+  background-color: transparent;
+  bottom: calc(27.26% - 10px);
+  color: var(--new-car);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  height: 38px;
+  left: 22px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 81px;
+}
+.web-1920-1 .fescii-mani-cnd7Qn {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 31px;
+  font-style: normal;
+  font-weight: 400;
+  height: 43px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 31px;
+  position: absolute;
+  text-align: left;
+  top: 5px;
+  white-space: nowrap;
+  width: calc(100.00% - 13px);
+}
+.web-1920-1 .follow-GZhBjQ {
+  background-color: transparent;
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% - 8px);
+  letter-spacing: 0.00px;
+  line-height: 28px;
+  position: absolute;
+  right: 10px;
+  text-align: left;
+  top: 8px;
+  white-space: nowrap;
+  width: 85px;
+}
+.web-1920-1 .follow-jxSMu6 {
+  background-color: transparent;
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  height: 39px;
+  letter-spacing: 0.00px;
+  line-height: 28px;
+  position: absolute;
+  right: 9px;
+  text-align: left;
+  top: 8px;
+  white-space: nowrap;
+  width: 85px;
+}
+.web-1920-1 .follow-qnNxUJ {
+  background-color: transparent;
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% - 9px);
+  letter-spacing: 0.00px;
+  line-height: 29px;
+  position: absolute;
+  right: 11px;
+  text-align: left;
+  top: 10px;
+  white-space: nowrap;
+  width: 88px;
+}
+.web-1920-1 .following-XVTbZx {
+  background-color: transparent;
+  color: var(--new-car);
+  font-family: 'SegoeUI-Bold', Helvetica, Arial, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  height: 29px;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  right: 39px;
+  text-align: left;
+  top: calc(41.67% - 12px);
+  white-space: nowrap;
+  width: 94px;
+}
+.web-1920-1 .founder-fescii-cnd7Qn {
+  background-color: transparent;
+  bottom: -6px;
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  height: 35px;
+  left: 2px;
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 100%;
+}
+.web-1920-1 .fredrick-femar-XVTbZx {
+  background-color: transparent;
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 400;
+  height: 40px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 29px;
+  position: absolute;
+  text-align: left;
+  top: calc(39.09% - 16px);
+  white-space: nowrap;
+  width: 197px;
+}
+.web-1920-1 .freelancing-xj6ht1 {
+  background-color: transparent;
+  color: var(--nevada);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  height: 24px;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 17px;
+  position: absolute;
+  text-align: left;
+  top: 44px;
+  white-space: nowrap;
+  width: 98px;
+}
+.web-1920-1 .google-developers-xj6ht1 {
+  background-color: transparent;
+  bottom: calc(38.86% - 9px);
+  color: var(--nevada);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  height: 23px;
+  left: 41px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 140px;
+}
+.web-1920-1 .group-10-4Wlkmg {
+  background-color: transparent;
+  height: 52px;
+  left: 97px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 97px);
+}
+.web-1920-1 .group-15-C61RwL {
+  background-color: transparent;
+  height: 22px;
+  left: 484px;
+  position: absolute;
+  top: 314px;
+  width: 827px;
+}
+.web-1920-1 .group-16-Y03IP1 {
+  background-color: transparent;
+  bottom: 3px;
+  height: 31px;
+  left: calc(39.62% - 39px);
+  position: absolute;
+  width: 99px;
+}
+.web-1920-1 .group-20-VKtKIU {
+  background-color: transparent;
+  bottom: 59px;
+  height: 28px;
+  left: 126px;
+  position: absolute;
+  width: 340px;
+}
+.web-1920-1 .group-21-c3qKEf {
+  background-color: transparent;
+  height: calc(100.00% - 2px);
+  left: 0px;
+  position: absolute;
+  top: 2px;
+  width: 72px;
+}
+.web-1920-1 .group-22-c3qKEf {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  position: absolute;
+  right: calc(48.55% - 54px);
+  top: 0px;
+  width: 112px;
+}
+.web-1920-1 .group-23-c3qKEf {
+  background-color: transparent;
+  height: calc(100.00% - 2px);
+  position: absolute;
+  right: 0px;
+  top: 2px;
+  width: 76px;
+}
+.web-1920-1 .group-24-VKtKIU {
+  background-color: transparent;
+  bottom: 11px;
+  height: 27px;
+  left: 114px;
+  position: absolute;
+  width: 641px;
+}
+.web-1920-1 .group-25-VKtKIU {
+  background-color: transparent;
+  height: 76px;
+  left: 37px;
+  position: absolute;
+  top: 67px;
+  width: 76px;
+}
+.web-1920-1 .group-26-VKtKIU {
+  background-color: transparent;
+  height: 95px;
+  left: 129px;
+  position: absolute;
+  top: 57px;
+  width: 342px;
+}
+.web-1920-1 .group-27-DzGMga {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .group-28-UrTV5a {
+  background-color: transparent;
+  height: calc(100.00% - 6px);
+  left: 0px;
+  position: absolute;
+  top: 4px;
+  width: 19px;
+}
+.web-1920-1 .group-29-DzGMga {
+  background-color: transparent;
+  height: 28px;
+  left: 9px;
+  position: absolute;
+  top: 4px;
+  width: calc(100.00% - 20px);
+}
+.web-1920-1 .group-30-aNKhDw {
+  background-color: transparent;
+  height: 38px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 149px;
+}
+.web-1920-1 .group-31-WEeakb {
+  background-color: transparent;
+  bottom: calc(38.13% - 27px);
+  height: 72px;
+  left: 14px;
+  position: absolute;
+  width: calc(100.00% - 20px);
+}
+.web-1920-1 .group-32-WEeakb {
+  background-color: transparent;
+  bottom: calc(16.04% - 4px);
+  height: 27px;
+  left: 32px;
+  position: absolute;
+  width: 311px;
+}
+.web-1920-1 .group-33-WEeakb {
+  background-color: transparent;
+  bottom: 22px;
+  height: 28px;
+  left: 40px;
+  position: absolute;
+  width: 111px;
+}
+.web-1920-1 .group-34-odKgLo {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .group-35-lWdor6 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 452px;
+}
+.web-1920-1 .group-36-0obA4s {
+  background-color: transparent;
+  height: 45px;
+  left: 24px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 48px);
+}
+.web-1920-1 .group-37-VKtKIU {
+  background-color: transparent;
+  height: 58px;
+  left: 10px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 33px);
+}
+.web-1920-1 .group-38-C61RwL {
+  background-color: transparent;
+  height: 667px;
+  left: 458px;
+  position: absolute;
+  top: 336px;
+  width: 900px;
+}
+.web-1920-1 .group-39-wz81jh {
+  background-color: transparent;
+  height: 28px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 28px;
+}
+.web-1920-1 .group-40-nixxxd {
+  background-color: transparent;
+  height: 28px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 28px;
+}
+.web-1920-1 .group-41-C61RwL {
+  background-color: transparent;
+  height: 47px;
+  left: 1353px;
+  position: absolute;
+  top: 18px;
+  width: 50px;
+}
+.web-1920-1 .group-42-C61RwL {
+  background-color: transparent;
+  height: 46px;
+  left: 894px;
+  position: absolute;
+  top: 15px;
+  width: 64px;
+}
+.web-1920-1 .group-43-C61RwL {
+  background-color: transparent;
+  height: 21px;
+  left: 475px;
+  position: absolute;
+  top: 1046px;
+  width: 426px;
+}
+.web-1920-1 .group-51-ASxCBk {
+  background-color: transparent;
+  bottom: -4px;
+  height: 35px;
+  position: absolute;
+  right: 8px;
+  transform: rotate(90deg);
+  width: 19px;
+}
+.web-1920-1 .group-52-C61RwL {
+  background-color: transparent;
+  height: 476px;
+  left: 15px;
+  position: absolute;
+  top: 146px;
+  width: 412px;
+}
+.web-1920-1 .group-53-C61RwL {
+  background-color: transparent;
+  height: 49px;
+  left: 1582px;
+  position: absolute;
+  top: 24px;
+  width: 319px;
+}
+.web-1920-1 .group-54-VaR3ej {
+  background-color: transparent;
+  height: 35px;
+  position: absolute;
+  right: 8px;
+  top: 8.20%;
+  transform: rotate(90deg);
+  width: 19px;
+}
+.web-1920-1 .group-55-aCi14x {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .group-56-Bd1Smh {
+  background-color: transparent;
+  height: 49px;
+  position: absolute;
+  right: 0px;
+  top: 11px;
+  width: 140px;
+}
+.web-1920-1 .group-57-QFNxF6 {
+  background-color: transparent;
+  bottom: calc(45.83% - 22px);
+  height: 49px;
+  position: absolute;
+  right: 0px;
+  width: 144px;
+}
+.web-1920-1 .group-58-FSZ9c8 {
+  background-color: transparent;
+  height: 47px;
+  position: absolute;
+  right: 0px;
+  top: 3px;
+  width: 142px;
+}
+.web-1920-1 .group-59-Bd1Smh {
+  background-color: transparent;
+  height: calc(100.00% - 5px);
+  left: calc(29.41% - 48px);
+  position: absolute;
+  top: 0px;
+  width: 162px;
+}
+.web-1920-1 .group-6-Y03IP1 {
+  background-color: transparent;
+  height: calc(100.00% - 4px);
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 119px;
+}
+.web-1920-1 .group-60-QFNxF6 {
+  background-color: transparent;
+  height: calc(100.00% - 2px);
+  left: calc(30.14% - 51px);
+  position: absolute;
+  top: 1px;
+  width: 169px;
+}
+.web-1920-1 .group-61-FSZ9c8 {
+  background-color: transparent;
+  height: 100%;
+  left: calc(38.56% - 84px);
+  position: absolute;
+  top: 0px;
+  width: 219px;
+}
+.web-1920-1 .group-62-gW6vdi {
+  background-color: transparent;
+  bottom: 16px;
+  height: 36px;
+  left: 12px;
+  position: absolute;
+  width: 369px;
+}
+.web-1920-1 .group-63-gW6vdi {
+  background-color: transparent;
+  height: 46px;
+  left: 17px;
+  position: absolute;
+  top: 0px;
+  width: calc(100.00% - 42px);
+}
+.web-1920-1 .group-64-gW6vdi {
+  background-color: transparent;
+  height: 76px;
+  left: 15px;
+  position: absolute;
+  top: 58px;
+  width: calc(100.00% - 60px);
+}
+.web-1920-1 .group-65-gW6vdi {
+  background-color: transparent;
+  height: 73px;
+  left: 10px;
+  position: absolute;
+  top: calc(48.93% - 36px);
+  width: calc(100.00% - 43px);
+}
+.web-1920-1 .group-66-gW6vdi {
+  background-color: transparent;
+  bottom: calc(19.80% - 13px);
+  height: 67px;
+  left: 7px;
+  position: absolute;
+  width: calc(100.00% - 39px);
+}
+.web-1920-1 .group-67-C61RwL {
+  background-color: transparent;
+  height: 457px;
+  left: 1396px;
+  position: absolute;
+  top: 145px;
+  width: 494px;
+}
+.web-1920-1 .group-68-ql7mN0 {
+  background-color: transparent;
+  height: 37px;
+  left: 12px;
+  position: absolute;
+  top: 1px;
+  width: calc(100.00% - 26px);
+}
+.web-1920-1 .group-69-ql7mN0 {
+  background-color: transparent;
+  height: 70px;
+  left: 11px;
+  position: absolute;
+  top: 52px;
+  width: 382px;
+}
+.web-1920-1 .group-70-ql7mN0 {
+  background-color: transparent;
+  height: 71px;
+  left: 10px;
+  position: absolute;
+  top: calc(49.33% - 35px);
+  width: 406px;
+}
+.web-1920-1 .group-71-ql7mN0 {
+  background-color: transparent;
+  bottom: calc(22.08% - 14px);
+  height: 63px;
+  left: 11px;
+  position: absolute;
+  width: 223px;
+}
+.web-1920-1 .group-72-ql7mN0 {
+  background-color: transparent;
+  bottom: 10px;
+  height: 36px;
+  left: 11px;
+  position: absolute;
+  width: 408px;
+}
+.web-1920-1 .group-73-C61RwL {
+  background-color: transparent;
+  height: 371px;
+  left: 1396px;
+  position: absolute;
+  top: 627px;
+  width: 494px;
+}
+.web-1920-1 .group-74-C61RwL {
+  background-color: transparent;
+  height: 436px;
+  left: 15px;
+  position: absolute;
+  top: 637px;
+  width: 416px;
+}
+.web-1920-1 .group-75-2osFvC {
+  background-color: transparent;
+  bottom: 19px;
+  height: 41px;
+  left: 97px;
+  position: absolute;
+  width: calc(100.00% - 188px);
+}
+.web-1920-1 .group-76-2osFvC {
+  background-color: transparent;
+  height: 70px;
+  left: 35px;
+  position: absolute;
+  top: 19px;
+  width: calc(100.00% - 134px);
+}
+.web-1920-1 .group-77-C61RwL {
+  background-color: transparent;
+  height: 162px;
+  left: 458px;
+  position: absolute;
+  top: 142px;
+  width: 895px;
+}
+.web-1920-1 .group-8-Y03IP1 {
+  background-color: transparent;
+  height: calc(100.00% - 5px);
+  position: absolute;
+  right: calc(26.45% - 29px);
+  top: 5px;
+  width: 110px;
+}
+.web-1920-1 .group-9-Y03IP1 {
+  background-color: transparent;
+  height: calc(100.00% - 8px);
+  position: absolute;
+  right: 0px;
+  top: 6px;
+  width: 106px;
+}
+.web-1920-1 .groups-xj6ht1 {
+  background-color: transparent;
+  color: var(--new-car);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  height: 38px;
+  left: 22px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  top: calc(43.34% - 16px);
+  white-space: nowrap;
+  width: 90px;
+}
+.web-1920-1 .heart-ljivCN {
+  background-color: transparent;
+  height: calc(100.00% + 2px);
+  left: -1px;
+  position: absolute;
+  top: -1px;
+  width: 33px;
+}
+.web-1920-1 .hello-im-fredri-t-adminombasite-VKtKIU {
+  background-color: transparent;
+  color: var(--new-car);
+  font-family: "Segoe UI", Helvetica, Arial, serif;
+  font-size: 21px;
+  height: 114px;
+  left: 124px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: calc(28.75% - 33px);
+  white-space: nowrap;
+  width: calc(100.00% - 167px);
+}
+.web-1920-1 .home2-C61RwL {
+  background-color: transparent;
+  height: 42px;
+  left: 659px;
+  position: absolute;
+  top: 19px;
+  width: 57px;
+}
+.web-1920-1 .house-VKtKIU {
+  background-color: transparent;
+  bottom: 93px;
+  height: 289px;
+  left: 113px;
+  position: absolute;
+  width: 615px;
+}
+.web-1920-1 .icons-chevron-down-VAhwTv {
+  background-color: transparent;
+  bottom: 6px;
+  height: 24px;
+  position: absolute;
+  right: 0px;
+  width: 24px;
+}
+.web-1920-1 .image-7lBdtx {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .image-A1ph27 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .image-NuhucW {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .info-with-circle-4K68Oz {
+  background-color: transparent;
+  bottom: 1px;
+  height: 31px;
+  position: absolute;
+  right: 0px;
+  width: 31px;
+}
+.web-1920-1 .info-with-circle-ubOPYJ {
+  background-color: transparent;
+  bottom: 2px;
+  height: 31px;
+  position: absolute;
+  right: 0px;
+  width: 31px;
+}
+.web-1920-1 .jobs-xj6ht1 {
+  background-color: transparent;
+  color: var(--nevada);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  height: 26px;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  text-align: left;
+  top: calc(17.80% - 5px);
+  white-space: nowrap;
+  width: 47px;
+}
+.web-1920-1 .joel-ochanda-bi-angi-likes-this-NuAwbu {
+  background-color: transparent;
+  color: var(--nevada);
+  font-family: "Segoe UI", Helvetica, Arial, serif;
+  font-size: 16px;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: calc(100.00% + 2px);
+}
+.web-1920-1 .like-ljivCN {
+  background-color: transparent;
+  height: calc(100.00% - 2px);
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 5px;
+  white-space: nowrap;
+  width: 31px;
+}
+.web-1920-1 .line-1-wz60dm {
+  background-color: transparent;
+  bottom: 33.33%;
+  height: 1px;
+  left: 0px;
+  position: absolute;
+  width: calc(100.00% - 106px);
+}
+.web-1920-1 .line-2-VKtKIU {
+  background-color: transparent;
+  bottom: 46px;
+  height: 3px;
+  left: 6px;
+  position: absolute;
+  width: calc(100.00% - 33px);
+}
+.web-1920-1 .line-23-xj6ht1 {
+  background-color: transparent;
+  bottom: 51px;
+  height: 1px;
+  left: 1px;
+  position: absolute;
+  width: 100%;
+}
+.web-1920-1 .line-3-0obA4s {
+  background-color: transparent;
+  bottom: 0px;
+  height: 1px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+.web-1920-1 .line-4-8t3xyo {
+  background-color: transparent;
+  height: calc(100.00% - 31px);
+  left: -30.98%;
+  position: absolute;
+  top: 18px;
+  transform: rotate(-90deg);
+  width: 31px;
+}
+.web-1920-1 .line-4-Olj0yE {
+  background-color: transparent;
+  height: calc(100.00% - 31px);
+  left: -30.98%;
+  position: absolute;
+  top: 18px;
+  transform: rotate(-90deg);
+  width: 31px;
+}
+.web-1920-1 .line-4-hzackg {
+  background-color: transparent;
+  bottom: 0px;
+  height: 18px;
+  position: absolute;
+  right: calc(48.44% - 2px);
+  width: 4px;
+}
+.web-1920-1 .line-5-WEeakb {
+  background-color: transparent;
+  height: 1px;
+  left: 1px;
+  position: absolute;
+  top: 43.98%;
+  width: calc(100.00% - 2px);
+}
+.web-1920-1 .line-6-WEeakb {
+  background-color: transparent;
+  bottom: 26.54%;
+  height: 1px;
+  left: 2px;
+  position: absolute;
+  width: calc(100.00% - 2px);
+}
+.web-1920-1 .line-7-WEeakb {
+  background-color: transparent;
+  bottom: 61px;
+  height: 1px;
+  left: 2px;
+  position: absolute;
+  width: calc(100.00% - 2px);
+}
+.web-1920-1 .linkedin-with-circle-C61RwL {
+  background-color: transparent;
+  height: 54px;
+  left: 25px;
+  position: absolute;
+  top: 17px;
+  width: 56px;
+}
+.web-1920-1 .lis-career-options-xj6ht1 {
+  background-color: transparent;
+  bottom: calc(48.55% - 10px);
+  color: var(--nevada);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  height: 21px;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 120px;
+}
+.web-1920-1 .lock-open-YVd4xN {
+  background-color: transparent;
+  height: calc(100.00% - 5px);
+  left: 0px;
+  position: absolute;
+  top: 4px;
+  width: 19px;
+}
+.web-1920-1 .magnifying-glass-C61RwL {
+  background-color: transparent;
+  height: 23px;
+  left: 140px;
+  position: absolute;
+  top: 36px;
+  width: 24px;
+}
+.web-1920-1 .mark-zuckerberg-and-196-others-Boxp30 {
+  background-color: transparent;
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 2px);
+  left: 31px;
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: calc(100.00% - 29px);
+}
+.web-1920-1 .mihai-stefan-724707-unsplash-RCepqa {
+  background-color: transparent;
+  height: 198.83%;
+  left: -21.23%;
+  position: absolute;
+  top: -13.96%;
+  width: 132.77%;
+}
+.web-1920-1 .mihai-stefan-724707-unsplash-m7hq0h {
+  background-color: transparent;
+  height: 198.83%;
+  left: -21.23%;
+  position: absolute;
+  top: -13.96%;
+  width: 132.77%;
+}
+.web-1920-1 .mihai-stefan-724707-unsplash-x38AxJ {
+  background-color: transparent;
+  height: 194.55%;
+  left: -19.09%;
+  position: absolute;
+  top: -11.82%;
+  width: 128.48%;
+}
+.web-1920-1 .monica-simons-VAhwTv {
+  background-color: transparent;
+  color: rgba(19,21,35,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% - 9px);
+  letter-spacing: 0.00px;
+  line-height: 41px;
+  position: absolute;
+  right: 39px;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: 219px;
+}
+.web-1920-1 .more-xj6ht1 {
+  background-color: transparent;
+  bottom: calc(32.68% - 8px);
+  color: rgba(106,9,252,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  height: 26px;
+  left: calc(38.88% - 23px);
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 58px;
+}
+.web-1920-1 .my-items-GrCwQC {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 1px);
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: 86px;
+}
+.web-1920-1 .new-posts-UrTV5a {
+  background-color: transparent;
+  color: var(--soapstone);
+  font-family: 'SegoeUI-Bold', Helvetica, Arial, serif;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 700;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.00px;
+  line-height: 21px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: 104px;
+}
+.web-1920-1 .oval-7lBdtx {
+  background-color: transparent;
+  border-radius: 35px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .oval-A1ph27 {
+  background-color: transparent;
+  border-radius: 35px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .oval-NuhucW {
+  background-color: transparent;
+  border-radius: 24.5px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .paint-Bd1Smh {
+  background-color: transparent;
+  border-radius: 298px;
+  bottom: 0px;
+  height: 62px;
+  left: 0px;
+  position: absolute;
+  width: 70px;
+}
+.web-1920-1 .paperplane-8dugqz {
+  background-color: transparent;
+  height: calc(100.00% - 1px);
+  left: 1px;
+  position: absolute;
+  top: 1px;
+  width: 26px;
+}
+.web-1920-1 .path-1-VKtKIU {
+  background-color: transparent;
+  height: calc(100.00% - 9px);
+  left: 0px;
+  position: absolute;
+  top: 9px;
+  width: 100%;
+}
+.web-1920-1 .path-1328-VWEwKr {
+  background-color: transparent;
+  height: 100%;
+  left: -1px;
+  position: absolute;
+  top: 2px;
+  width: 30px;
+}
+.web-1920-1 .path-1369-Boxp30 {
+  background-color: transparent;
+  bottom: 2px;
+  height: 21px;
+  left: 0px;
+  position: absolute;
+  width: 25px;
+}
+.web-1920-1 .path-399-Iwxymj {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .path-400-Iwxymj {
+  background-color: transparent;
+  height: 12px;
+  left: 3px;
+  position: absolute;
+  top: calc(36.18% - 4px);
+  width: calc(100.00% - 5px);
+}
+.web-1920-1 .pete-mockaits-h-awesome-at-your-3xy8vT {
+  background-color: transparent;
+  bottom: -4px;
+  color: var(--black);
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  height: 23px;
+  left: 42px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: calc(100.00% - 87px);
+}
+.web-1920-1 .pete-mockaits-h-awesome-at-your-CxIjup {
+  background-color: transparent;
+  bottom: -4px;
+  color: var(--black);
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  height: 23px;
+  left: 33px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: calc(100.00% - 63px);
+}
+.web-1920-1 .photo-lu0bwk {
+  background-color: transparent;
+  color: var(--bismark);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.00px;
+  line-height: 28px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: 78px;
+}
+.web-1920-1 .picture-lu0bwk {
+  background-color: transparent;
+  bottom: 3px;
+  height: 28px;
+  left: 0px;
+  position: absolute;
+  width: 32px;
+}
+.web-1920-1 .picture2-FSZ9c8 {
+  background-color: transparent;
+  border-radius: 428px;
+  height: calc(100.00% - 1px);
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 79px;
+}
+.web-1920-1 .play-KxsCxs {
+  background-color: transparent;
+  height: calc(100.00% - 8px);
+  left: 0px;
+  position: absolute;
+  top: 4px;
+  width: 33px;
+}
+.web-1920-1 .plus-GZhBjQ {
+  background-color: transparent;
+  bottom: calc(43.68% - 11px);
+  height: 24px;
+  left: 13px;
+  position: absolute;
+  width: 24px;
+}
+.web-1920-1 .plus-jxSMu6 {
+  background-color: transparent;
+  bottom: calc(46.04% - 12px);
+  height: 25px;
+  left: 11px;
+  position: absolute;
+  width: 28px;
+}
+.web-1920-1 .plus-qnNxUJ {
+  background-color: transparent;
+  height: 24px;
+  left: 9px;
+  position: absolute;
+  top: calc(38.96% - 9px);
+  width: 26px;
+}
+.web-1920-1 .polygon-2-wz60dm {
+  background-color: transparent;
+  bottom: 1px;
+  height: 11px;
+  position: absolute;
+  right: 1px;
+  width: 14px;
+}
+.web-1920-1 .profile-views-933-XIxiep {
+  background-color: transparent;
+  color: rgba(1,184,252,1.0);
+  font-family: "Segoe UI", Helvetica, Arial, serif;
+  font-size: 20px;
+  height: 29px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: calc(100.00% - 4px);
+}
+.web-1920-1 .public-XVTbZx {
+  background-color: transparent;
+  bottom: 2px;
+  height: 23px;
+  left: calc(23.91% - 11px);
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 47px;
+}
+.web-1920-1 .recent-xj6ht1 {
+  background-color: transparent;
+  color: var(--nevada);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  height: 38px;
+  left: 22px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  white-space: nowrap;
+  width: 85px;
+}
+.web-1920-1 .rectangle-1-C61RwL {
+  background-color: rgba(206,199,199,1.0);
+  height: 92px;
+  left: 0px;
+  opacity: 0.3;
+  position: fixed;
+  top: 0px;
+  width: 1920px;
+}
+.web-1920-1 .rectangle-10-G9jpHK {
+  background-color: var(--white);
+  border: 2px solid rgba(8,245,119,1.0);
+  border-radius: 43px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .rectangle-11-GZhBjQ {
+  background-color: var(--nevada);
+  border-radius: 39px;
+  height: 100%;
+  left: 0px;
+  opacity: 0.34;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .rectangle-11-IuJ4TI {
+  background-color: var(--new-car);
+  border-radius: 39px;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .rectangle-11-jxSMu6 {
+  background-color: var(--nevada);
+  border-radius: 39px;
+  height: 100%;
+  left: 0px;
+  opacity: 0.22;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .rectangle-11-qnNxUJ {
+  background-color: var(--nevada);
+  border-radius: 39px;
+  height: 100%;
+  left: 0px;
+  opacity: 0.31;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .rectangle-15-VKtKIU {
+  background-color: var(--nevada);
+  bottom: 91px;
+  height: 290px;
+  left: 0px;
+  position: absolute;
+  width: 100%;
+}
+.web-1920-1 .rectangle-16-WEeakb {
+  background-color: var(--nevada);
+  border: 2px solid rgba(3,3,3,1.0);
+  height: 81px;
+  left: 0px;
+  mix-blend-mode: darken;
+  opacity: 0.19;
+  position: absolute;
+  top: 1px;
+  width: calc(100.00% - 2px);
+}
+.web-1920-1 .rectangle-17-C61RwL {
+  background-color: var(--white);
+  border-radius: 24px;
+  height: 207px;
+  left: 458px;
+  position: absolute;
+  top: 1031px;
+  width: 900px;
+}
+.web-1920-1 .rectangle-2-C61RwL {
+  background-color: transparent;
+  border: 1px solid var(--black);
+  border-radius: 60px;
+  height: 48px;
+  left: 128px;
+  position: absolute;
+  top: 22px;
+  width: 257px;
+}
+.web-1920-1 .rectangle-3-C61RwL {
+  background-color: var(--black);
+  height: 3px;
+  left: 606px;
+  position: absolute;
+  top: 87px;
+  width: 164px;
+}
+.web-1920-1 .rectangle-5-WEeakb {
+  background-color: var(--white);
+  border-radius: 12px;
+  height: 100%;
+  left: 1px;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+.web-1920-1 .rectangle-6-2osFvC {
+  background-color: var(--white);
+  border-radius: 35px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .rectangle-605-xj6ht1 {
+  background-color: var(--white);
+  border-radius: 12px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .rectangle-606-C61RwL {
+  background-color: var(--white);
+  border-radius: 14px;
+  height: 160px;
+  left: 1396px;
+  position: absolute;
+  top: 1028px;
+  width: 494px;
+}
+.web-1920-1 .rectangle-8-gW6vdi {
+  background-color: var(--white);
+  border-radius: 19px;
+  height: calc(100.00% - 1px);
+  left: 1px;
+  position: absolute;
+  top: 1px;
+  width: 100%;
+}
+.web-1920-1 .rectangle-9-ql7mN0 {
+  background-color: var(--white);
+  border-radius: 17px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.web-1920-1 .ronnie-margina-WEeakb {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 400;
+  height: 40px;
+  left: calc(41.82% - 88px);
+  letter-spacing: 0.00px;
+  line-height: 29px;
+  position: absolute;
+  text-align: left;
+  top: calc(26.92% - 11px);
+  white-space: nowrap;
+  width: 211px;
+}
+.web-1920-1 .search-aduki-C61RwL {
+  background-color: transparent;
+  color: rgba(35,103,129,1.0);
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 173px;
+  letter-spacing: 0.00px;
+  line-height: 26px;
+  opacity: 0.8;
+  position: absolute;
+  text-align: left;
+  top: 34px;
+  white-space: nowrap;
+  width: auto;
+}
+.web-1920-1 .see-all-xj6ht1 {
+  background-color: transparent;
+  bottom: 55px;
+  color: var(--new-car);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  height: 35px;
+  left: calc(23.29% - 17px);
+  letter-spacing: 0.00px;
+  line-height: 25px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 72px;
+}
+.web-1920-1 .see-more-VKtKIU {
+  background-color: transparent;
+  color: rgba(106,9,252,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  height: 23px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: calc(16.95% - 14px);
+  text-align: left;
+  top: calc(40.30% - 9px);
+  white-space: nowrap;
+  width: 80px;
+}
+.web-1920-1 .share-8dugqz {
+  background-color: transparent;
+  height: 23px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: 43px;
+}
+.web-1920-1 .show-more-activities-on-aduki-VaR3ej {
+  background-color: transparent;
+  color: var(--nevada);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: calc(100.00% - 39px);
+}
+.web-1920-1 .sort-by-top-wz60dm {
+  background-color: transparent;
+  color: rgba(3,184,252,1.0);
+  font-family: "Segoe UI", Helvetica, Arial, serif;
+  font-size: 17px;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.00px;
+  line-height: 17px;
+  position: absolute;
+  right: 14px;
+  text-align: left;
+  top: 2px;
+  white-space: nowrap;
+  width: 86px;
+}
+.web-1920-1 .span0-842qoB {
+  color: rgba(68,68,68,1.0);
+  font-family: 'SegoeUI-Bold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.web-1920-1 .span0-Y74naK {
+  color: rgba(68,68,68,1.0);
+  font-family: 'SegoeUI-Black', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 900;
+}
+.web-1920-1 .span0-ZmpX7O {
+  color: rgba(101,109,112,1.0);
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span0-kVeGvY {
+  color: rgba(68,68,68,1.0);
+  font-family: 'SegoeUI-Bold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.web-1920-1 .span0-rYeXfm {
+  color: rgba(112,112,112,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span0-vKoJ43 {
+  color: rgba(112,112,112,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span0-zVpp2w {
+  color: rgba(68,68,68,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span1-842qoB {
+  color: rgba(68,68,68,1.0);
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span1-Y74naK {
+  color: rgba(68,68,68,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span1-ZmpX7O {
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span1-kVeGvY {
+  color: rgba(68,68,68,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span1-rYeXfm {
+  color: rgba(112,112,112,1.0);
+  font-family: 'SegoeUI-Regular', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span1-vKoJ43 {
+  color: rgba(112,112,112,1.0);
+  font-family: 'SegoeUI-Bold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.web-1920-1 .span1-zVpp2w {
+  color: rgba(22,80,241,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span2-842qoB {
+  color: rgba(68,68,68,1.0);
+  font-family: 'SegoeUI-Bold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.web-1920-1 .span2-kVeGvY {
+  color: rgba(101,109,112,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span2-rYeXfm {
+  font-family: 'SegoeUI-Bold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.web-1920-1 .span2-vKoJ43 {
+  font-family: 'SegoeUI-Bold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+}
+.web-1920-1 .span3-842qoB {
+  color: rgba(68,68,68,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .span4-842qoB {
+  color: rgba(101,109,112,1.0);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.web-1920-1 .start-a-post-G9jpHK {
+  background-color: transparent;
+  color: var(--bismark);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 31px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% - 9px);
+  left: 32px;
+  letter-spacing: 0.00px;
+  line-height: 31px;
+  position: absolute;
+  text-align: left;
+  top: 11px;
+  white-space: nowrap;
+  width: 162px;
+}
+.web-1920-1 .staysafe-xj6ht1 {
+  background-color: transparent;
+  color: var(--nevada);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: 29px;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  text-align: left;
+  top: calc(33.78% - 10px);
+  white-space: nowrap;
+  width: 87px;
+}
+.web-1920-1 .title-dont-mean-band-and-father-XVTbZx {
+  background-color: transparent;
+  bottom: calc(29.86% - 7px);
+  height: 23px;
+  left: 1px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: calc(100.00% + 1px);
+}
+.web-1920-1 .todays-most-viewed-activities-4K68Oz {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 1px);
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: 369px;
+}
+.web-1920-1 .try-premium-free-for-3-months-YVd4xN {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 2px);
+  left: 28px;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: calc(100.00% - 26px);
+}
+.web-1920-1 .users-avatar-photo-2-states-4Wlkmg {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 70px;
+}
+.web-1920-1 .users-avatar-photo-2-states-VAhwTv {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 49px;
+}
+.web-1920-1 .users-avatar-photo-2-states-odKgLo {
+  background-color: transparent;
+  height: 70px;
+  left: calc(47.68% - 33px);
+  position: absolute;
+  top: 45px;
+  width: 70px;
+}
+.web-1920-1 .users-wz81jh {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  position: absolute;
+  top: 1px;
+  width: calc(100.00% - 3px);
+}
+.web-1920-1 .video-KxsCxs {
+  background-color: transparent;
+  color: var(--bismark);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 2px);
+  letter-spacing: 0.00px;
+  line-height: 23px;
+  position: absolute;
+  right: -2px;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: 63px;
+}
+.web-1920-1 .view-all-recommendations-ASxCBk {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 27px;
+  position: absolute;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: calc(100.00% - 43px);
+}
+.web-1920-1 .views-of-your-posts-4985k-XIxiep {
+  background-color: transparent;
+  bottom: -6px;
+  color: rgba(3,184,252,1.0);
+  font-family: "Segoe UI", Helvetica, Arial, serif;
+  font-size: 20px;
+  height: 29px;
+  left: 4px;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: calc(100.00% - 2px);
+}
+.web-1920-1 .x-KOYx3e {
+  background-color: transparent;
+  bottom: -10px;
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+  height: 62px;
+  left: 57px;
+  letter-spacing: 0.00px;
+  line-height: 45px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 13px;
+}
+.web-1920-1 .x-VKtKIU {
+  background-color: transparent;
+  bottom: 38px;
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  height: 82px;
+  letter-spacing: 0.00px;
+  line-height: 60px;
+  position: absolute;
+  right: calc(47.17% - 8px);
+  text-align: left;
+  white-space: nowrap;
+  width: 16px;
+}
+.web-1920-1 .x-XVTbZx {
+  background-color: transparent;
+  color: var(--tundora);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 400;
+  height: 58px;
+  letter-spacing: 0.00px;
+  line-height: 42px;
+  position: absolute;
+  right: calc(40.61% - 5px);
+  text-align: left;
+  top: 7px;
+  white-space: nowrap;
+  width: 12px;
+}
+.web-1920-1 .x1-the-six-habit-of-high-perfor-CxIjup {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% + 2px);
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 26px;
+  opacity: 0.72;
+  position: absolute;
+  text-align: left;
+  top: 9px;
+  white-space: nowrap;
+  width: calc(100.00% + 2px);
+}
+.web-1920-1 .x19-xLQQM2 {
+  background-color: transparent;
+  color: var(--soapstone);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% - 4px);
+  left: calc(50.00% - 9px);
+  letter-spacing: 0.00px;
+  line-height: 17px;
+  position: absolute;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: 18px;
+}
+.web-1920-1 .x2-speaking-conf-and-effectively-3xy8vT {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  height: 33px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 23px;
+  opacity: 0.76;
+  position: absolute;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: calc(100.00% + 2px);
+}
+.web-1920-1 .x3-strategic-thinking-7ANjiA {
+  background-color: transparent;
+  color: var(--black);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  height: 34px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 24px;
+  opacity: 0.79;
+  position: absolute;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: calc(100.00% + 2px);
+}
+.web-1920-1 .x39-cVvdk6 {
+  background-color: transparent;
+  color: var(--soapstone);
+  font-family: 'SegoeUI-Semibold', Helvetica, Arial, serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  height: calc(100.00% - 4px);
+  letter-spacing: 0.00px;
+  line-height: 17px;
+  position: absolute;
+  right: 2px;
+  text-align: left;
+  top: 4px;
+  white-space: nowrap;
+  width: 21px;
+}
+.web-1920-1 .x3h-XVTbZx {
+  background-color: transparent;
+  bottom: 2px;
+  height: 23px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 20px;
+}
+.web-1920-1 .x437-comments-VKtKIU {
+  background-color: transparent;
+  bottom: 53px;
+  color: var(--tundora);
+  font-family: "Segoe UI", Helvetica, Arial, serif;
+  font-size: 18px;
+  height: 26px;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  right: calc(37.44% - 48px);
+  text-align: left;
+  white-space: nowrap;
+  width: 128px;
+}
+.web-1920-1 .zachariah-mwangi-likes-this-aNKhDw {
+  background-color: transparent;
+  bottom: -4px;
+  color: var(--nevada);
+  font-family: "Segoe UI", Helvetica, Arial, serif;
+  font-size: 16px;
+  height: 23px;
+  left: 0px;
+  letter-spacing: 0.00px;
+  line-height: 16px;
+  position: absolute;
+  text-align: left;
+  white-space: nowrap;
+  width: 208px;
+}
+:root {
+  --bismark: rgba(71,111,138,1.0);
+  --black: rgba(0,0,0,1.0);
+  --blue-violet: rgba(137,104,187,1.0);
+  --dove-gray: rgba(112,112,112,1.0);
+  --nevada: rgba(101,109,112,1.0);
+  --new-car: rgba(22,80,241,1.0);
+  --soapstone: rgba(254,251,251,1.0);
+  --tundora: rgba(68,68,68,1.0);
+  --white: rgba(255,255,255,1.0);
+}
+</style>
+<meta name="author" content="AnimaApp.com - Design to code, Automated.">
+</head>
+<body style="margin: 0;background: rgba(254,246,246,1.0);">
+  <input type="hidden" id="anPageName" name="page" value="web-1920-1">
+  <div class="container-center-horizontal">
+    <div class="web-1920-1 screen " data-id="4db8d615-77e2-426a-9e07-10cb98b46568">
+      <div class="rectangle-1-C61RwL border-1px-dove-gray" data-id="befb8f43-3aca-4583-92bd-73191d85de05"></div>
+      <img class="linkedin-with-circle-C61RwL" data-id="9cc9ef46-37c8-4995-9cbf-f34e466291f8" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/linkedin-with-circle@1x.png">
+      <div class="rectangle-2-C61RwL" data-id="a6404e48-302e-44b3-b5ff-25556c5fa7c7">
+      </div><img class="magnifying-glass-C61RwL" data-id="5fdb0ea3-e328-491e-b8a0-9a208ff80d68" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/magnifying-glass@1x.png">
+      <div class="search-aduki-C61RwL" data-id="0f104008-5bf6-4bfa-8f46-82d1c170d3fe">Search aduki</div><img class="home2-C61RwL" data-id="bb61a44e-265b-42f7-ba5e-9a07cc2e3b3e" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/home2@1x.png">
+      <div class="rectangle-3-C61RwL" data-id="e20b5c37-520e-4330-898d-a6811b54d27e"></div><img class="aid-kit-C61RwL" data-id="d0c0957d-3f04-4bd5-97bc-8a10c4d99df4" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/aid-kit@1x.png">
+      <div class="group-15-C61RwL" data-id="ecbbb820-b016-4343-9191-78e78c9d97fd"><img class="line-1-wz60dm" data-id="fb6366af-10aa-448d-831b-faeea76073cf" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/line-1@1x.png">
+        <div class="sort-by-top-wz60dm" data-id="97f5f6e4-9e67-4fb2-af7f-4e8a2d576603">
+          <span class="span0-ZmpX7O">sort by </span>
+          <span class="span1-ZmpX7O">Top</span></div>
+          <img class="polygon-2-wz60dm" data-id="4e0d9797-bf8c-4495-bb84-82030c7eb8ca" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/polygon-2@1x.png"></div>
+          <div class="group-38-C61RwL" data-id="dcea1cc8-3cc0-437f-a4ff-468c6d6e7004"><img class="path-1-VKtKIU" data-id="6eacb6d0-b759-47eb-84df-1f4bfcbf7c26" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/path-1@1x.png">
+            <div class="hello-im-fredri-t-adminombasite-VKtKIU" data-id="418df00c-c7d0-432c-ab0a-081e63039776">
+              <span class="span0-zVpp2w">Hello, I&#39;m Fredrick Femar, A creative geek from Nairobi Kenya , <br>I always share my prototypes designs on youtube, please go check them out,<br>link in the profile bio...<br>Hire me for your next project.. </span><span class="span1-zVpp2w">admin@omba.site</span></div>
+              <div class="group-26-VKtKIU" data-id="1a7a4519-d37a-46e5-9b48-e351a0faf3ad">
+                <div class="fredrick-femar-XVTbZx" data-id="bb792d70-d843-4910-8948-8465719520ed">Fredrick Femar</div><div class="x-XVTbZx" data-id="d4a5f693-02a3-44e7-bf10-016b7a56b4ce">.</div>
+                <p class="title-dont-mean-band-and-father-XVTbZx segoeui-normal-tundora-16px" data-id="228721ce-f84b-46b4-b855-6dcebbe02974">Title don&#39;t mean anything. Husband and Father</p>
+                <div class="following-XVTbZx" data-id="26730aea-6653-4bb0-b9ea-d4ea7035e705">Following</div>
+                <div class="x3h-XVTbZx segoeui-normal-blue-violet-16px" data-id="c5128894-3527-488c-9a84-c81462a0db31">3h</div>
+                <div class="x-KOYx3e" data-id="61910599-528f-4d6b-be2c-79257ad99b20">.</div>
+                <div class="ago-XVTbZx segoeui-normal-blue-violet-16px" data-id="9dc77719-6253-48af-82cc-787a007b85cb">ago</div>
+                <div class="public-XVTbZx segoeui-normal-blue-violet-16px" data-id="813c99f3-7542-46c0-9c1b-c4e407064465">public</div>
+              </div><div class="see-more-VKtKIU" data-id="e0e24053-4597-4931-b100-b466b83638df">...see more</div><div class="group-24-VKtKIU" data-id="77664bed-2ae9-4c51-ab2f-3d32da40da17"><div class="group-21-c3qKEf" data-id="0f824ffe-f4d0-4983-8ed5-ac07bc14808e"><img class="heart-ljivCN" data-id="96373725-9beb-45be-8777-83f337f0d15d" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/heart@1x.png"><div class="like-ljivCN segoeui-normal-tundora-16px" data-id="6f4a9d04-bd73-4b2f-8759-3e5f5fd9444f">Like</div></div><div class="group-22-c3qKEf" data-id="d2fd8ccf-c193-446d-8cae-79b36a64b79a"><img class="path-1328-VWEwKr" data-id="760c15a8-a12f-436f-9830-94c32dad64d8" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/path-1328@1x.png"><div class="comment-VWEwKr segoeui-normal-tundora-16px" data-id="7e8e7e74-2941-4aed-bb57-6b2b4e54e4d9">Comment</div></div><div class="group-23-c3qKEf" data-id="7cb4917d-5728-443e-b141-c41d1841c5db"><img class="paperplane-8dugqz" data-id="11e8e8be-2732-46e8-b6d6-5ba2ac362a47" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/paperplane@1x.png"><div class="share-8dugqz segoeui-normal-tundora-16px" data-id="f2653175-3e10-4df0-8624-9cd63a9e7d6c">Share</div></div></div><div class="group-20-VKtKIU" data-id="6f773aba-0d9c-4dfc-836b-0a8193c88b31"><img class="path-1369-Boxp30" data-id="8ac007f8-0ff9-4057-bb25-2508e8fbb882" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/path-1369@1x.png"><div class="mark-zuckerberg-and-196-others-Boxp30" data-id="329daea5-9559-40ac-b53c-35afc952bff2">Mark Zuckerberg and 196 others</div></div><div class="group-25-VKtKIU" data-id="89df4d01-9378-4b43-8af3-27e7ed4f18d0"><img class="annn-Gms4it" data-id="05ee1450-582e-4e0b-a23a-927436f3e5ef" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/annn@1x.png"><div class="ellipse-1-Gms4it" data-id="24843cc1-27e8-4019-8225-90879aae8d40"></div></div><img class="line-2-VKtKIU" data-id="e4e44120-9ce0-4d85-abfa-58fb3f87754f" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/line-2@1x.png"><div class="rectangle-15-VKtKIU" data-id="13d9256f-4f57-49a3-a398-fe1f6ed17204"></div><img class="house-VKtKIU" data-id="b4211bbe-08ab-4de6-ac48-6898e97837ab" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/house@1x.png"><h1 class="x-VKtKIU" data-id="4f6b644c-a654-46be-8d4e-ab14e3be18d3">.</h1><div class="x437-comments-VKtKIU" data-id="0d1c4dab-aa29-47b5-b86e-cc526a768c10"><span class="span0-Y74naK">437 </span><span class="span1-Y74naK">Comments</span></div><div class="group-37-VKtKIU" data-id="c0e57060-0cd0-45d3-b9d5-cdf367ac2d10"><img class="line-3-0obA4s" data-id="baebb948-9602-4d42-91ec-8343c11629d5" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/line-3@1x.png"><div class="group-36-0obA4s" data-id="a835c2c5-9964-471a-b684-ac5473aacb7a"><img class="dots-three-horizontal-lWdor6" data-id="2e6cda16-1e7c-4bf6-b52a-2f2d3df8dc45" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/dots-three-horizontal-1@1x.png"><div class="group-35-lWdor6" data-id="0a84a4f8-ff66-4090-aad7-d345eb686ba7"><div class="zachariah-mwangi-likes-this-aNKhDw" data-id="06ddb2a4-a460-4cee-966e-2ff27aa21a00"><span class="span0-kVeGvY">Zachariah Mwangi</span><span class="span1-kVeGvY">&nbsp;</span><span class="span2-kVeGvY">likes this</span></div><div class="group-30-aNKhDw" data-id="5350c7c4-e0e2-4ece-b871-ee35c6891f27"><div class="group-27-DzGMga" data-id="88b79d16-9034-47f5-8bda-06d18212cc73"><div class="rectangle-11-IuJ4TI" data-id="8296f3e0-8253-4ebe-8e8e-1efe8b34c01a"></div></div><div class="group-29-DzGMga" data-id="3ec405f1-bac3-414d-8a15-4e2878b87f9f"><div class="new-posts-UrTV5a" data-id="fc8f05b5-a13f-4b32-aa8a-4aa6e38eaed0">New Posts</div><div class="group-28-UrTV5a" data-id="072834a0-fd6b-496d-b91f-3f220d8ef9ec"><img class="chevron-up-hzackg" data-id="62b0142a-65f3-4067-a0f4-a1812a1359ec" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/chevron-up@1x.png"><img class="line-4-hzackg" data-id="bf718394-acd5-49d5-9811-dd3cf6ede047" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/line-4@1x.png"></div></div></div></div></div></div></div><div class="rectangle-17-C61RwL" data-id="f768c97b-5bc0-45ce-8a9c-2776cd6bfca9"></div><div class="group-42-C61RwL" data-id="b53af61a-0771-4b0f-99e5-696a7179a962"><img class="users-wz81jh" data-id="88b5c79a-1973-40d9-9862-8b2da202bb3a" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/users@1x.png"><div class="group-39-wz81jh" data-id="894105c6-7d99-4694-87db-27be1c3f0694"><div class="ellipse-2-cVvdk6" data-id="a57385f0-cc72-4519-b76a-78209178f6f9"></div><div class="x39-cVvdk6" data-id="a872429e-b086-47b3-83db-7936ce648aa9">39</div></div></div><div class="group-41-C61RwL" data-id="13fca9fd-1d60-4553-9051-b0e5cd7f8ed3"><img class="bubbles-nixxxd" data-id="e2afb3a9-2efc-4f84-ad85-952049abc15a" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/bubbles@1x.png"><div class="group-40-nixxxd" data-id="bc5b2c65-5f1c-4ef2-b4c5-0fa319241a8b"><div class="ellipse-3-xLQQM2" data-id="bbc73b33-3d79-4863-9f44-560a8a22b679"></div><div class="x19-xLQQM2" data-id="e402b822-0fb5-4854-95b1-40bbd37a9f1e">19</div></div></div><div class="group-43-C61RwL" data-id="37eaf52c-365a-4642-a77a-adcffe841d69"><p class="joel-ochanda-bi-angi-likes-this-NuAwbu" data-id="6660af58-1dc1-4b2d-82a1-1ee0b5281b2c"><span class="span0-842qoB">Joel Ochanda, Biden Joe </span><span class="span1-842qoB">and</span><span class="span2-842qoB"> Zachariah Mwangi</span><span class="span3-842qoB">&nbsp;</span><span class="span4-842qoB">likes this</span></p></div><img class="dots-three-horizontal-C61RwL" data-id="26c2e545-ebed-4449-9222-cbea8d1bbd96" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/dots-three-horizontal@1x.png"><div class="group-67-C61RwL" data-id="ccdf2906-583b-41d9-ba4d-32fe8338f179"><div class="rectangle-8-gW6vdi border-1px-dove-gray" data-id="f0e302d6-c981-4017-89c3-52b9b5ccaf10"></div><div class="group-63-gW6vdi" data-id="d9ac4b84-0ce8-479c-b204-cc97b68a8d8b"><div class="add-to-your-feed-ubOPYJ" data-id="25acbb95-a27e-4fb6-80f8-0f34f9592fbc">Add to your feed</div><img class="info-with-circle-ubOPYJ" data-id="b358a03e-4a1d-4ae9-8530-18d46f9cf252" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/info-with-circle@1x.png"></div><div class="group-65-gW6vdi" data-id="4dd61f19-5796-4cfd-b259-a64a4b342603"><div class="group-57-QFNxF6" data-id="49014d1b-2b5f-46aa-bb42-49d5c604e481"><div class="rectangle-11-qnNxUJ border-1-5px-nevada" data-id="a403b815-3f8b-4e2b-bf2f-54d731695e7d"></div><div class="follow-qnNxUJ" data-id="0f2b02be-c081-4c50-a199-15a489d19eac">Follow</div><img class="plus-qnNxUJ" data-id="2cee8e05-7fc6-4743-8a9f-2545756c2ec0" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/plus@1x.png"></div><img class="annn-QFNxF6" data-id="d5f0912c-e221-4585-97d3-5d4393f71906" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/annn-1@1x.png"><div class="group-60-QFNxF6" data-id="56eea391-afbf-48fc-87b7-16f2079ce178"><div class="founder-fescii-cnd7Qn" data-id="f3166577-7248-41af-bd35-0197fd36c5b4">Founder. Fescii</div><div class="fescii-mani-cnd7Qn" data-id="7fdffd07-68ec-4012-92d2-d736fa49101f">Fescii Mani</div></div></div><div class="group-64-gW6vdi" data-id="5aa0547b-16dc-48af-9a0e-dc254ef9b6c2"><img class="paint-Bd1Smh" data-id="2abeac2f-7f20-467d-9910-a664f9290f83" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/paint@1x.png"><div class="group-56-Bd1Smh" data-id="cee7a641-cfc9-4138-9f2e-076b7146e0b8"><div class="rectangle-11-jxSMu6 border-1-5px-nevada" data-id="dde96f80-0a6b-40fb-ab16-a0eb5cba71bd"></div><div class="follow-jxSMu6" data-id="8fac4c56-c38e-4058-b5e6-60296ead791e">Follow</div><img class="plus-jxSMu6" data-id="2f7d0673-4fc7-4c62-bd7f-99625a0eb6d3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/plus-1@1x.png"></div><div class="group-59-Bd1Smh" data-id="5590872c-eea8-4c5f-9795-6a4e34e70efa"><div class="arsenal-jU6RQi" data-id="ba47f45c-f20b-4c5a-810f-ac91677b9a50">Arsenal</div><div class="company-sports-jU6RQi" data-id="fc4f9bd3-c8d8-4d55-a527-bc19d268927e">Company. Sports</div></div></div><div class="group-66-gW6vdi" data-id="99f5a15e-4b82-4ca8-8679-6e6407a68bc4"><div class="group-58-FSZ9c8" data-id="66957d96-159b-4792-a30d-aa561ce192e9"><div class="rectangle-11-GZhBjQ border-1-5px-nevada" data-id="9a01957b-fb0e-421f-8d00-6892bb3e1614"></div><div class="follow-GZhBjQ" data-id="b58740b6-715b-4470-bcf9-8c3015349506">Follow</div><img class="plus-GZhBjQ" data-id="afb0f8e2-8a6c-4234-97b4-474101b915a1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/plus-2@1x.png"></div><img class="picture2-FSZ9c8" data-id="4d94baf1-1c0e-47bd-9428-7950d720610e" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/picture2@1x.png"><div class="group-61-FSZ9c8" data-id="bba40d08-a22b-47cf-88e1-b59df3c53db9"><div class="bmw-ZJJWlH" data-id="d01c6b7f-4fba-48d4-a5e9-0a4c2a496541">BMW</div><div class="company-automobile-ZJJWlH" data-id="97d7f5f5-48b4-4490-a359-07b1a0241922">Company. automobile..</div></div></div><div class="group-62-gW6vdi" data-id="46197d8c-2a84-415d-98e4-66dff9afe156"><div class="view-all-recommendations-ASxCBk" data-id="ff6a9c3d-4369-4029-a4f8-e16908c9f629">View all recommendations</div><div class="group-51-ASxCBk" data-id="6d6a5713-83d0-4946-8646-fba551627bde"><img class="chevron-up-Olj0yE" data-id="b0e980b2-ef96-41f4-8dfa-eaf0b2652044" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/chevron-up-1@1x.png"><img class="line-4-Olj0yE" data-id="a7d3f6a5-f07c-4a8e-824e-a551d0edb106" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/line-4-1@1x.png"></div></div></div><div class="group-53-C61RwL" data-id="c94f558d-f117-4ec5-8b29-581a66f5eaad"><div class="icons-chevron-down-VAhwTv" data-id="55e612b0-e3b9-4a7f-b871-20c0aadb70c1"><img class="path-399-Iwxymj" data-id="49353924-cfe0-46cd-ab48-ef6e59d7c589" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/path-399@1x.png"><img class="path-400-Iwxymj" data-id="b09ee82d-03ca-4c0d-80a1-cf9a9bfd14de" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/path-400@1x.png"></div><div class="monica-simons-VAhwTv" data-id="82441a8c-51d6-49f5-ac84-0b3874553df3">Ronnie&nbsp;&nbsp;Margina</div><div class="users-avatar-photo-2-states-VAhwTv" data-id="61cbf7b9-ee2d-4047-974e-f9c67c903f72"><img class="oval-NuhucW" data-id="ccb193dc-82ef-47da-906b-d1b11d13c56b" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/oval@1x.png"><img class="image-NuhucW" data-id="4810bf0b-4ed7-4ec3-aae1-a8bbd9019bf1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/image@1x.png"></div></div><div class="group-77-C61RwL" data-id="000bca83-3dcc-4ee9-be99-c7f36e5151b3"><div class="rectangle-6-2osFvC" data-id="f8fb5e25-8fff-4619-92a7-46c991351814"></div>
+              <div class="group-75-2osFvC" data-id="a6a46859-891f-4786-ad51-997bb4b9625c"><div class="group-6-Y03IP1" data-id="56f88689-ad9d-4c9b-94f3-2ce7f82edc9a"><img class="picture-lu0bwk" data-id="fa7d6010-cadc-4d09-a29b-499905e13d20" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/picture@1x.png"><div class="photo-lu0bwk" data-id="41f1eb82-ab18-4165-b56f-b46fa4aef7d2">Photo</div></div><div class="group-9-Y03IP1" data-id="b3d1b49c-e5b7-42f5-8f82-b3945cab807a"><img class="code-fiUv6h" data-id="0fae5ae2-6f75-430d-bceb-bebfbd5f2973" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/code@1x.png"><div class="code-JxopiR" data-id="4dfd4370-6ced-40de-a5cf-96eb9b4f0fd4">Code</div></div><div class="group-8-Y03IP1" data-id="8ab190f3-b79d-494a-945e-8a087e7fbe61"><img class="calendar-yQISpS" data-id="e45b2397-a428-49dd-8fd7-5e0b720d281e" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/calendar-1@1x.png"><div class="event-yQISpS" data-id="12a56c2f-e5be-416c-8cf9-8dbee7414343">Event</div></div><div class="group-16-Y03IP1" data-id="a91eb9bc-66fc-403f-a168-605557fd0d8e"><div class="video-KxsCxs" data-id="c6c73c3b-1c96-41a9-8625-daefb6a7609a">Video</div><img class="play-KxsCxs" data-id="6d405efd-a1c9-4e9a-bfdf-d3e0cea67d58" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/play@1x.png"></div></div><div class="group-76-2osFvC" data-id="12b12b2d-aeda-44d0-a739-3bd6c13183b3"><div class="group-10-4Wlkmg" data-id="e19f92eb-cc7e-4ed7-9d0a-15c7587232ac"><div class="rectangle-10-G9jpHK" data-id="76e2b205-7df2-49b3-8479-ec77ce37ca40"></div><div class="start-a-post-G9jpHK" data-id="4923dc9f-6591-44e8-9c76-8ee7c6782e90">Start a Post</div></div><div class="users-avatar-photo-2-states-4Wlkmg" data-id="707e3c9a-23bb-4cd6-a3aa-dd368b0de8e4"><img class="oval-A1ph27" data-id="376c76aa-d578-4c40-aa2a-f6f311b5bcdc" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/oval-1@1x.png"><img class="image-A1ph27" data-id="c720c526-50fe-4b72-969a-d06a934648d3" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/image-1@1x.png"></div></div></div><div class="group-52-C61RwL" data-id="8cfe5334-c3ad-409e-bf30-782a1753164f"><div class="group-34-odKgLo" data-id="303440ae-5252-4e42-ae53-a2ca76190ead"><div class="rectangle-5-WEeakb border-1px-dove-gray" data-id="37038625-4d1d-4ce8-8e13-79fd6c01f563"></div><div class="rectangle-16-WEeakb" data-id="8313170e-377f-4646-ba93-d2053240ffe0"></div><div class="ronnie-margina-WEeakb" data-id="d16eeb19-da57-4c2c-a90c-19148a4ca86a">Ronnie Margina</div><div class="co-founder-aduki-inc-WEeakb" data-id="22651abe-958a-4839-b618-e31606eea29f">Co-Founder aduki, Inc.</div><div class="group-31-WEeakb" data-id="034a9438-9b9c-4f45-82a0-b99b8d73f1bf"><div class="profile-views-933-XIxiep" data-id="277cef5e-14bf-4c05-a53f-aa7b92cc37cb"><span class="span0-vKoJ43">Profile views</span><span class="span1-vKoJ43">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="span2-vKoJ43"> 933</span></div><div class="views-of-your-posts-4985k-XIxiep" data-id="5c7b36b7-906e-4500-819a-30d3122cd72b"><span class="span0-rYeXfm">Views of your posts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="span1-rYeXfm">&nbsp;&nbsp;</span><span class="span2-rYeXfm">498.5k</span></div></div><img class="line-5-WEeakb" data-id="7aa47ba3-5b5a-4ef6-9879-c9b14d672b5e" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/line-5@1x.png"><img class="line-6-WEeakb" data-id="817eaded-52b6-4594-9083-22067d570cfb" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/line-5@1x.png"><div class="access-more-tools-insigts-WEeakb" data-id="3cb7290e-42c2-4ffe-8219-e8d8be8d2b72">Access more tools &amp; insigts</div><div class="group-32-WEeakb" data-id="cccf922a-263f-453c-93e7-393aa2e86e51"><img class="lock-open-YVd4xN" data-id="1c8b11bd-3bd0-46f3-9744-7c0073b2153a" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/lock-open@1x.png"><div class="try-premium-free-for-3-months-YVd4xN" data-id="27e82a04-0266-4145-9e93-867745e6a1fb">Try Premium Free for 3 Months</div></div><img class="line-7-WEeakb" data-id="fccffe39-5e11-42bb-89c1-5504eab01e5b" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/line-7@1x.png"><div class="group-33-WEeakb" data-id="653e33b1-db23-4e5e-9ee1-97d5a79cbef8"><div class="my-items-GrCwQC" data-id="f72d27fb-0303-4a76-8534-5265e23ae95b">My Items</div><img class="bookmark-GrCwQC" data-id="84c2108e-8574-4e94-9f30-dfe4395a5a37" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/bookmark@1x.png"></div></div><div class="users-avatar-photo-2-states-odKgLo" data-id="1280af2f-7493-490c-9014-3dc087e2bd86"><img class="oval-7lBdtx" data-id="289829b6-3ccc-4b68-af5d-2725cdc1ab77" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/oval-1@1x.png"><img class="image-7lBdtx" data-id="3e17638c-04b0-4b43-b085-b57d85c953b8" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/image-1@1x.png"></div></div><div class="group-73-C61RwL" data-id="a82e6d87-a847-4cf9-a859-726b4e339dfe"><div class="rectangle-9-ql7mN0 border-1px-dove-gray" data-id="8c0fc8db-3cd6-4be9-ae34-bb371b635ed3"></div><div class="group-72-ql7mN0" data-id="1ea5c4c5-ef2b-48ea-9623-d600cc613db3"><div class="show-more-activities-on-aduki-VaR3ej" data-id="efc81810-78e3-4c05-a5dc-cdd530da0a94">Show more activities on aduki</div><div class="group-54-VaR3ej" data-id="981fca6d-6abb-4e24-a2eb-4eef688fcbfb"><img class="chevron-up-8t3xyo" data-id="eee5af0d-ce6d-4e03-9e76-4b51b017d622" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/chevron-up-2@1x.png"><img class="line-4-8t3xyo" data-id="2c62f7b0-21cd-42d0-9e16-78c2b623ca24" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/line-4-1@1x.png"></div></div><div class="group-68-ql7mN0" data-id="1ddcc34a-142c-41f3-9b0b-ee01afc0f37a"><div class="todays-most-viewed-activities-4K68Oz" data-id="c798ecc9-4771-43ee-8cc4-b1ca34d629e3">Today&#39;s most viewed activities</div><img class="info-with-circle-4K68Oz" data-id="69d9a8b3-9924-4019-a24d-6715166e8130" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/info-with-circle-1@1x.png"></div><div class="group-69-ql7mN0" data-id="63e74d5f-49e9-465c-af05-8fcf66942ba4"><div class="x1-the-six-habit-of-high-perfor-CxIjup" data-id="0ec45035-e0b2-4129-b7d6-994ec0c85147">1. The six Habits of High Perfor…<br></div><p class="pete-mockaits-h-awesome-at-your-CxIjup" data-id="662b4e2e-bebe-47d9-984a-e9494b7227c2">Pete Mockaits | How to Be awesome at Your...</p></div><div class="group-70-ql7mN0" data-id="f779a65d-8d6b-4970-9b6e-0fb334145155"><div class="x2-speaking-conf-and-effectively-3xy8vT" data-id="408d5daf-cc03-4968-9a19-bb1a0c01eedd">2. Speaking Confidently and Effectively</div><p class="pete-mockaits-h-awesome-at-your-3xy8vT" data-id="2aa94a1e-cd7f-429f-9b21-348dab833304">Pete Mockaits | How to Be awesome at Your...</p></div><div class="group-71-ql7mN0" data-id="2f20a36e-c84f-4e1b-b4ae-8ce6937c3f80"><div class="x3-strategic-thinking-7ANjiA" data-id="a03f8c8a-ae1b-4a9b-b45b-9fc71ac0b911">3. Strategic Thinking</div><div class="dorie-clark-7ANjiA" data-id="d4aa3098-f19b-4031-a515-243b76e79ef0">Dorie Clark</div></div></div><img class="calendar-C61RwL" data-id="f8cd54ff-5507-4dae-8dc0-bdef97d74c03" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/calendar@1x.png"><div class="rectangle-606-C61RwL border-1px-dove-gray" data-id="7eb79776-b8d1-409e-9dc7-1670d3a70681"></div><div class="group-74-C61RwL" data-id="d0a4cae8-a41e-4741-83e8-15cb19c15552"><div class="group-55-aCi14x" data-id="5f20b8a5-b8dc-4294-b6cb-b48d14a37481"><div class="rectangle-605-xj6ht1 border-1px-dove-gray" data-id="a31e428d-4056-4163-a5c4-1bee57bf40cd"></div><div class="recent-xj6ht1" data-id="0a712aa6-7088-464d-b560-d8fd52c36242">Recent</div><div class="freelancing-xj6ht1" data-id="e52ef992-ea19-4b68-b7d9-fe30cfb19330">#freelancing</div><div class="jobs-xj6ht1" data-id="4ea1efa9-5729-4e80-ae5a-b52f374c9358">#jobs</div><div class="covid19-xj6ht1" data-id="6864e914-ad48-4a6d-9b94-92ce040d463a">#covid19</div><div class="staysafe-xj6ht1" data-id="289fb603-9669-41d6-999b-6bb2855b570c">#staysafe</div><div class="groups-xj6ht1" data-id="52617b27-2254-4754-8482-8a5c2124812f">Groups</div><div class="lis-career-options-xj6ht1" data-id="371c70a3-0f87-418c-9daf-6f7535341bc6">LIS Career Options</div><div class="dev-community-xj6ht1" data-id="d3ec6d8c-55e3-4e4c-8ef3-f3162aa13583">Dev Community</div><div class="google-developers-xj6ht1" data-id="5ce8981b-f892-4930-b810-536625276f78">Google Developers</div><div class="events-xj6ht1" data-id="3c7d5186-94b7-4a3a-a5e0-b1d15463f226">Events</div><div class="more-xj6ht1" data-id="257aa164-95ab-493d-9387-13befb8a8d8f">more...</div><div class="developer-week-xj6ht1" data-id="8f0d2d98-d42d-49fe-b48b-ca21a457943b">Developer week</div><div class="see-all-xj6ht1" data-id="682ac664-6ae0-424e-b93a-ba586d9951f0">see all</div><img class="line-23-xj6ht1" data-id="d172ecc7-ec4b-4af9-8534-1982c7e4c8f5" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/line-23@1x.png"><div class="discover-more-xj6ht1" data-id="f47265ba-319c-4a6f-9304-f5e8a62094a8">Discover more</div></div><img class="calendar-aCi14x" data-id="84459460-d830-4d01-b13b-1b3e84bdb017" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" anima-src="https://cdn.animaapp.com/projects/603771b3f46db962e001099b/releases/603771f1d8cdd2cd68c73dc4/img/calendar-2@1x.png"></div></div></div><script src="launchpad-js/launchpad-banner.js" async></script><script defer src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js"></script></body></html>
